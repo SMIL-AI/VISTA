@@ -28,10 +28,10 @@ Vision language models (VLMs) have achieved impressive performance across a vari
 </details>
 
 ## Visual Search Agent
-![visual_search_agent](./assets/visual_agent.jpg)
+![visual_search_agent](./assets/train_test_pipeline.png)
 
 ## Framework
-![framework](./assets/model_inference.jpg)
+![framework](./assets/framework.png)
 
 <br>
 

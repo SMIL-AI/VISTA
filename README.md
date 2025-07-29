@@ -14,14 +14,11 @@
 
 
 # 🔥News
-- [2025/05/21] We released our paper — discussions and feedback are warmly welcome!
-- [2025/07/09] We released our SFT dataset, model, training, and evaluation code. Welcome to download and explore them.
+- [2025/07/29] We released our paper — discussions and feedback are warmly welcome!
+- [2025/07/29] We released our SFT dataset, model, training, and evaluation code. Welcome to download and explore them.
 
 <br>
 
-# Overview
-
-![overview](./assets/teaser.jpg)
 
 <details><summary>Abstract</summary> 
 Vision language models (VLMs) have achieved impressive performance across a variety of computer vision tasks. However, the multimodal reasoning capability has not been fully explored in existing models. In this paper, we propose a Chain-of-Focus (CoF) method that allows VLMs to perform adaptive focusing and zooming in on key image regions based on obtained visual cues and the given questions, achieving efficient multimodal reasoning. To enable this CoF capability, we present a two-stage training pipeline, including supervised fine-tuning (SFT) and reinforcement learning (RL). In the SFT stage, we construct the MM-CoF dataset, comprising 3K samples derived from a visual agent designed to adaptively identify key regions to solve visual tasks with different image resolutions and questions. We use MM-CoF to fine-tune the Qwen2.5-VL model for cold start. In the RL stage, we leverage the outcome accuracies and formats as rewards to update the Qwen2.5-VL model, enabling further refining the search and reasoning strategy of models without human priors. Our model achieves significant improvements on multiple benchmarks. On the V* benchmark that requires strong visual reasoning capability, our model outperforms existing VLMs by 5% among 8 image resolutions ranging from 224 to 4K, demonstrating the effectiveness of the proposed CoF method and facilitating the more efficient deployment of VLMs in practical applications.
@@ -41,7 +38,7 @@ Vision language models (VLMs) have achieved impressive performance across a vari
 
 ### Installation
 
-Please follow the [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) repository to install the environment.
+Please follow the [Qwen2.5-VL]([https://github.com/hiyouga/LLaMA-Factory](https://github.com/QwenLM/Qwen2.5-VL)) repository to install the environment.
 
 ### Data Preparation
 

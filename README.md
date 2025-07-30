@@ -21,14 +21,18 @@
 
 
 <details><summary>Abstract</summary> 
-Vision language models (VLMs) have achieved impressive performance across a variety of computer vision tasks. However, the multimodal reasoning capability has not been fully explored in existing models. In this paper, we propose a Chain-of-Focus (CoF) method that allows VLMs to perform adaptive focusing and zooming in on key image regions based on obtained visual cues and the given questions, achieving efficient multimodal reasoning. To enable this CoF capability, we present a two-stage training pipeline, including supervised fine-tuning (SFT) and reinforcement learning (RL). In the SFT stage, we construct the MM-CoF dataset, comprising 3K samples derived from a visual agent designed to adaptively identify key regions to solve visual tasks with different image resolutions and questions. We use MM-CoF to fine-tune the Qwen2.5-VL model for cold start. In the RL stage, we leverage the outcome accuracies and formats as rewards to update the Qwen2.5-VL model, enabling further refining the search and reasoning strategy of models without human priors. Our model achieves significant improvements on multiple benchmarks. On the V* benchmark that requires strong visual reasoning capability, our model outperforms existing VLMs by 5% among 8 image resolutions ranging from 224 to 4K, demonstrating the effectiveness of the proposed CoF method and facilitating the more efficient deployment of VLMs in practical applications.
-</details>
+Accurate road scene understanding and robust traffic risk analysis are critical for the advancement of Intelligent Transportation Systems (ITS) and autonomous driving. Traditional methods often struggle with scalability and generalization, particularly under the diverse and unpredictable conditions of real-world traffic environments. We introduce a novel multi-agent prompting and distillation framework to address these limitations, enabling the automatic generation of high-quality traffic scene annotations and contextual risk assessments.
 
-## Visual Search Agent
-![visual_search_agent](./assets/train_test_pipeline.png)
+Our framework orchestrates two large Vision-Language Models (VLMs), ChatGPT-4o and o3-mini, using a structured Chain-of-Thought (CoT) strategy to produce rich, multi-perspective outputs. These outputs serve as knowledge-enriched pseudo-annotations for supervised fine-tuning of a much smaller student VLM. The resulting compact 3B-scale model, named VISTA, is capable of understanding low-resolution traffic videos and generating semantically faithful, risk-aware captions.
+
+Despite its significantly reduced parameter count, VISTA achieves strong performance across established captioning metrics (BLEU-4, METEOR, ROUGE-L, and CIDEr) when benchmarked against its teacher models. This demonstrates that effective knowledge distillation and structured multi-agent supervision can empower lightweight VLMs to capture complex reasoning capabilities. The compact architecture of VISTA facilitates efficient deployment on edge devices, enabling real-time risk monitoring without requiring extensive infrastructure upgrades. We release the full training pipeline and model checkpoints to foster scalable and adaptable solutions for region-specific transportation safety applications.
+</details>
 
 ## Framework
 ![framework](./assets/framework.png)
+
+## Training and testing pipeline
+![visual_search_agent](./assets/train_test_pipeline.png)
 
 <br>
 
@@ -42,69 +46,30 @@ Please follow the [Qwen2.5-VL]([https://github.com/hiyouga/LLaMA-Factory](https:
 
 ### Data Preparation
 
-1. Download the dataset (including images and annotations) from [Hugging Face – Cof SFT Dataset](https://huggingface.co/datasets/xintongzhang/CoF-SFT-Data-5.4k)
+1. You can access the dataset by the official site of [511 Virginia](https://511.vdot.virginia.gov/), [511 GA](https://511ga.org/cctv?start=0&length=10&order%5Bi%5D=1&order%5Bdir%5D=asc), and [Caltrans](https://cwwp2.dot.ca.gov/vm/iframemap.htm).
 
-2. Modify the configuration file `configs/sft_lora-7b.yaml` to match your data paths and training settings.
-3. Copy `configs/dataset_info.json` to your image folder.
+2. After processing the dataset, you can use the scripts in `data_process` to generate the training and testing json file for fine tuning QwenVL-2.5 model. 
 
 ### Launch Training
 
 Training can be started with the following script.
 
 ```bash
-conda activate llamafactory
-bash ./slurm_jobs/sft/train_7b_lora.sh
+conda activate Qwen
+bash ./scripts/sft_3b.sh
 ```
 
 <br>
 
 # Evaluation
 
-### Installation
-
-Set up an environment with `vllm`.
-
-```bash
-conda create -n vllm python=3.10 -y
-conda activate vllm
-pip install vllm==0.8.2
-```
-
-### Prepare Data and Model
-
-The Vstar Benchmark serves as an example dataset and can be downloaded from [Vstar benchmark](https://huggingface.co/datasets/craigwu/vstar_bench).
-
-The model can be downloaded from [Hugging Face – Cof SFT Model 7B](https://huggingface.co/xintongzhang/CoF-sft-model-7b).
-
 ### Inference
 
-Run the inference script using vllm.
-
 ```bash
-conda activate vllm
-bash ./slurm_jobs/eval/inference_vstar.sh
+conda activate Qwen
+python evaluation_calculation_weather.py
 ```
 
-
-### Performance Metrics
-
-To evaluate the model's performance on the VSTAR benchmark, begin by launching a dedicated vllm server process to serve the evaluation model (e.g., a judge model):
-
-```bash
-vllm serve /path/to/Qwen2.5-VL-72B-Instruct \
-    --served-model-name judge \
-    --port 51232 \
-    --limit-mm-per-prompt image=1 \
-    --tensor-parallel-size 4 \
-    --trust-remote-code \
-    --disable-log-requests
-```
-
-Once the vllm service is running, execute the evaluation script to compute metrics:
-
-```bash
-bash ./slurm_jobs/eval/metrics_vstar.sh
-```
 
 
 

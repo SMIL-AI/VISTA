@@ -1,0 +1,22 @@
+Based on the input video, perform a structured scene analysis and risk assessment.
+Please fill in the following template exactly, replacing the placeholders with your observations.
+Stick to bullet points and short complete sentences where applicable.
+
+**Structured Scene Analysis**
+- **Time of Day**: {time_of_day}
+- **Weather Conditions**: {weather}
+- **Pavement Wetness**: {wetness}
+- **Vehicle Behavior**: {vehicle_behavior}
+- **Traffic Flow & Speed**: {traffic_flow}
+- **Congestion Level**: {congestion}
+
+**Summary**  
+{summary}
+
+**Risk Report**
+1. **Environmental Risk**: {env_risk}
+2. **Vehicle Behavior Risk**: {veh_risk}
+3. **Traffic Flow Risk**: {flow_risk}
+4. **Overall Safety Risk Level**: {risk_level}
+5. **Driver Alerts**: {driver_alerts}
+6. **Suggested Safe Speed**: {safe_speed}

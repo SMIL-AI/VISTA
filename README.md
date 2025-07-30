@@ -62,6 +62,11 @@ bash ./scripts/sft_3b.sh
 <br>
 
 # Evaluation
+Use this command to install the required package for evaluation 
+```bash
+pip install -r requirements.txt
+pip install pycocoevalcap
+```
 
 ### Inference
 

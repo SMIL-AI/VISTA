@@ -32,7 +32,7 @@ Despite its significantly reduced parameter count, VISTA achieves strong perform
 ![Demo Preview](assets/demo.gif)
 
 # 🔥News
-- [2025/07/30] We released our SFT dataset, model, training, and evaluation code. Welcome to download and explore them.
+- [2025/07/30] We released our data process script, model, training, and evaluation code. Welcome to download and explore them.
 
 <br>
 

@@ -1,11 +1,14 @@
-# Vista (3B)-Vision-informed-Safety-and-Transportation-Assessment
+# **VISTA (3B)** – *Vision-Informed Safety and Transportation Assessment*
 
+**VISTA** (*Vision-Language Model for Intelligent Road Scene Understanding and Traffic Risk Assessment*) is a compact, 3B-scale Vision-Language Model designed to interpret low-resolution traffic videos and produce **semantically rich**, **risk-aware captions** in real time.  
+
+Distilled from multi-agent supervision using **ChatGPT-4o** and **o3-mini**, VISTA blends high-level scene understanding with contextual traffic risk reasoning. Its lightweight architecture allows **scalable deployment on edge devices**, making it ideal for enhancing safety intelligence across existing traffic camera networks **without infrastructure upgrades**.
 
 <br>
 <span>
 <b>Authors:</b> 
 <a class="name" target="_blank" href="https://winstonyang117.github.io/">Yunxiang Yang<sup>*</sup></a>, 
-<a class="name" target="_blank" href="https://zhigao2017.github.io/">Ningning Xu<sup>*</sup></a>, 
+<a class="name" target="_blank" href="https://github.com/XComedian">Ningning Xu<sup>*</sup></a>, 
 <a class="name" target="_blank" href="https://engineering.uga.edu/team_member/jidong-yang/">Jidong Yang<sup>†</sup></a>, 
 <br>
 <sup>*</sup>Equal Contribution. 
@@ -14,13 +17,12 @@
 
 
 # 🔥News
-- [2025/07/29] We released our paper — discussions and feedback are warmly welcome!
-- [2025/07/29] We released our SFT dataset, model, training, and evaluation code. Welcome to download and explore them.
+- [2025/07/30] We released our SFT dataset, model, training, and evaluation code. Welcome to download and explore them.
 
 <br>
 
 
-<details><summary>Abstract</summary> 
+<details><summary>Detailed Abstract</summary> 
 Accurate road scene understanding and robust traffic risk analysis are critical for the advancement of Intelligent Transportation Systems (ITS) and autonomous driving. Traditional methods often struggle with scalability and generalization, particularly under the diverse and unpredictable conditions of real-world traffic environments. We introduce a novel multi-agent prompting and distillation framework to address these limitations, enabling the automatic generation of high-quality traffic scene annotations and contextual risk assessments.
 
 Our framework orchestrates two large Vision-Language Models (VLMs), ChatGPT-4o and o3-mini, using a structured Chain-of-Thought (CoT) strategy to produce rich, multi-perspective outputs. These outputs serve as knowledge-enriched pseudo-annotations for supervised fine-tuning of a much smaller student VLM. The resulting compact 3B-scale model, named VISTA, is capable of understanding low-resolution traffic videos and generating semantically faithful, risk-aware captions.

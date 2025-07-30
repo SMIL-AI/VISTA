@@ -1,5 +1,12 @@
 # **VISTA (3B)** – *Vision-Informed Safety and Transportation Assessment*
 
+<div align="center">
+  <br>
+  <a href="https://huggingface.co/yyang117/VISTA_3B_Vision_Informed_Safety_and_Transportation_Assessment">
+    <img src="https://img.shields.io/badge/🤗 huggingface-Model-yellow" alt="Model">
+  </a>
+</div>
+
 **VISTA** (*Vision-Language Model for Intelligent Road Scene Understanding and Traffic Risk Assessment*) is a compact, 3B-scale Vision-Language Model designed to interpret low-resolution traffic videos and produce **semantically rich**, **risk-aware captions** in real time. Distilled from multi-agent supervision using **ChatGPT-4o** and **o3-mini**, VISTA blends high-level scene understanding with contextual traffic risk reasoning. Its lightweight architecture allows **scalable deployment on edge devices**, making it ideal for enhancing safety intelligence across existing traffic camera networks **without infrastructure upgrades**.
 
 <details><summary>Detailed Abstract</summary> 

@@ -15,6 +15,8 @@ Distilled from multi-agent supervision using **ChatGPT-4o** and **o3-mini**, VIS
 <sup>†</sup>Corresponding Author.
 </span>
 
+### 🎬 Demo
+[Click to view demo.mp4](assets/demo.mp4)
 
 # 🔥News
 - [2025/07/30] We released our SFT dataset, model, training, and evaluation code. Welcome to download and explore them.

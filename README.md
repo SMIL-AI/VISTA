@@ -42,7 +42,7 @@ Despite its significantly reduced parameter count, VISTA achieves strong perform
 
 ### Installation
 
-Please follow the [Qwen2.5-VL]([https://github.com/hiyouga/LLaMA-Factory](https://github.com/QwenLM/Qwen2.5-VL)) repository to install the environment.
+Please follow the [Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL) repository to install the environment.
 
 ### Data Preparation
 

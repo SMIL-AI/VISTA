@@ -1,4 +1,4 @@
-# **VISTA (3B)** – *Vision-Informed Safety and Transportation Assessment*
+# **VISTA (3B)** – *Vision for Intelligent Scene and Traffic Analysis*
 
 <div align="center">
   <br>

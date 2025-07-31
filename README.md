@@ -71,6 +71,7 @@ bash ./scripts/sft_3b.sh
 <br>
 
 # Evaluation
+Here is our finetuned model [weights](https://huggingface.co/yyang117/VISTA_3B_Vision_Informed_Safety_and_Transportation_Assessment)
 Use this command to install the required package for evaluation 
 ```bash
 pip install -r requirements.txt
